@@ -12,12 +12,6 @@
 - [x] ES Modules syntax (`05_import.js`)
 - [x] Creating utility modules (`math.js`)
 
-### 🚧 In Progress
-Currently working through:
-- Directory-based modules (Fruits directory)
-- External package implementation (FigletDir)
-- Advanced module patterns
-
 ### 📝 Key Learnings So Far
 
 #### 1. Basic Node.js Execution
