@@ -1,0 +1,35 @@
+<!-- Include the head section (metadata, title, stylesheets) using EJS include -->
+<%- include("includes/head.ejs") %> 
+
+<body>
+    <!-- EJS interpolation tag: dynamically inserts the value of 'data.name' into the HTML -->
+    <h2>Instagram Page @<%= data.name %>
+    </h2>
+    <button>Follow</button>
+    <button style="margin-bottom: 20px; margin-right: 10px;">Message</button>
+
+    <br>
+
+    <!-- EJS interpolation tags: dynamically render 'followers' and 'following' counts from 'data' object -->
+    <span>Followers: <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Following: <%= data.following %></span>
+
+    <hr>
+
+    <!-- EJS scriptlet tag: used here to loop over the 'posts' array in 'data' -->
+    <% for (let post of data.posts) { %>
+        <!-- Inside the loop, EJS interpolation tags dynamically render each post's image URL -->
+        <img src="<%= post.image %>" alt="image">
+
+        <div>
+            <!-- EJS interpolation tags dynamically render likes and comments for each post -->
+            <span>Likes: <%= post.likes %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Comments: <%= post.comments %></span>
+        </div>
+
+    <!-- Closing the EJS for-loop -->
+    <% } %>
+
+    <script src="/script.js"></script>
+
+</body>
+
+</html>

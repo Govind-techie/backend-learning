@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits</title>
+</head>
+
+<body>
+    <h1>Fruits</h1>
+    <ul>
+        <!-- EJS for loop: Iterates over each item in the 'fruits' array -->
+        <% for(fruit of fruits) { %>
+            <li>
+                <!-- EJS interpolation: Outputs the value of 'fruit' -->
+                <%= fruit %>
+            </li>
+        <% } %>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Dice</title>
+</head>
+
+<body>
+    <!-- EJS interpolation tag dynamically inserts the value of diceVal -->
+    <h1>Dice Value: <%= diceVal %>
+    </h1>
+
+    <!-- EJS conditional statement renders the following HTML only if diceVal equals 6 -->
+    <% if (diceVal===6) { %>
+        <h2>Nice, roll dice again</h2>
+        <% } %>
+</body>
+
+</html>
