@@ -22,6 +22,20 @@
 - [x] Command Line Arguments (`02_processArgv.js`)
 - [x] Basic Math Operations (`math.js`)
 
+### Express.js
+- [x] Basic Express Server
+- [x] HTTP Methods (GET, POST)
+- [x] Route Parameters
+- [x] Query Strings
+- [x] Static Files
+
+### EJS Templates
+- [x] Template Engine Setup
+- [x] Dynamic Content Rendering
+- [x] Loops & Conditionals
+- [x] Partials & Includes
+- [x] Passing Data to Views
+
 ---
 
 ## 💡 Key Concepts Learned
@@ -56,12 +70,27 @@ const args = process.argv.slice(2);
 console.log('User provided:', args);
 ```
 
-### NPM Package Usage
+### Express Server Setup
 
 ```javascript
-// Using figlet package
-const figlet = require('figlet');
-console.log(figlet.textSync("Hello World!"));
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello Express');
+});
+
+app.listen(3000);
+```
+
+### EJS Template Usage
+
+```javascript
+app.set('view engine', 'ejs');
+
+app.get('/home', (req, res) => {
+    res.render('home', { name: 'World' });
+});
 ```
 
 ---
@@ -85,14 +114,26 @@ console.log(figlet.textSync("Hello World!"));
 - Installing and using packages (Figlet example)
 - Package.json structure
 
+**Express Framework**
+- Web application framework
+- Routing system
+- Middleware concept
+- Request/Response cycle
+
+**EJS Template Engine**
+- Dynamic HTML generation
+- Template syntax (<%= %>)
+- Includes & partials
+- Data passing to views
+
 ---
 
 ## 🎯 Next Learning Goals
 
-1. Express.js Framework
-2. Server Creation & Routes
-3. Database Integration
-4. RESTful API Design
+1. Database Integration
+2. RESTful API Design
+3. Authentication & Authorization
+4. Error Handling
 
 ---
 
