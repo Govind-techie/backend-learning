@@ -36,6 +36,14 @@
 - [x] Partials & Includes
 - [x] Passing Data to Views
 
+### Object-Oriented Programming
+- [x] OOP Basics (`01_OOPS.js`)
+- [x] Object Prototypes (`02_objectPrototypes.js`)
+- [x] Factory Functions (`03_factoryFunctions.js`)
+- [x] Constructor Functions (`04_newOperator.js`)
+- [x] ES6 Classes (`05_classes.js`)
+- [x] Inheritance & Polymorphism (`06_inheritance.js`)
+
 ---
 
 ## 💡 Key Concepts Learned
@@ -93,6 +101,34 @@ app.get('/home', (req, res) => {
 });
 ```
 
+### OOP Concepts
+
+**Classes and Objects**
+```javascript
+class User {
+    constructor(username, email) {
+        this.username = username;
+        this.email = email;
+    }
+    
+    getInfo() {
+        return `${this.username} (${this.email})`;
+    }
+}
+
+const user = new User('john', 'john@example.com');
+```
+
+**Inheritance**
+```javascript
+class Admin extends User {
+    constructor(username, email, role) {
+        super(username, email);
+        this.role = role;
+    }
+}
+```
+
 ---
 
 ## 📝 Learning Notes
@@ -126,6 +162,14 @@ app.get('/home', (req, res) => {
 - Includes & partials
 - Data passing to views
 
+**Object-Oriented Programming**
+- Class-based vs Prototype-based OOP
+- Constructor functions and 'new' operator
+- Inheritance patterns in JavaScript
+- Factory function patterns
+- 'this' keyword behavior
+- Prototypal inheritance chain
+
 ---
 
 ## 🎯 Next Learning Goals
@@ -134,6 +178,7 @@ app.get('/home', (req, res) => {
 2. RESTful API Design
 3. Authentication & Authorization
 4. Error Handling
+5. Advanced Design Patterns
 
 ---
 
