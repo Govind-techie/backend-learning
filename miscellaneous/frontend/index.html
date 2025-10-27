@@ -1,0 +1,57 @@
+<!--
+    This HTML file demonstrates the use of GET and POST HTTP methods through simple forms.
+
+    Understanding GET and POST Requests:
+
+    1. GET Method:
+       - The GET method is used to request data from a specified resource.
+       - When a form uses method="get", the form data is appended to the URL as query parameters.
+         For example: /register?user=example&pass=1234
+       - This means the data is visible in the browser's address bar.
+       - GET requests can be cached, remain in the browser history, and can be bookmarked.
+       - Because data is sent in the URL, it is limited in length and should not be used for sensitive information.
+       - GET requests are idempotent, meaning multiple identical requests should have the same effect as a single request.
+
+    2. POST Method:
+       - The POST method is used to send data to a server to create/update a resource.
+       - When a form uses method="post", the form data is sent inside the HTTP request body.
+       - This makes the data not visible in the URL, providing a bit more privacy.
+       - POST requests are not cached by default and do not remain in browser history or bookmarks.
+       - There is no size limitation like in GET, so it is suitable for sending large amounts of data.
+       - POST requests are not idempotent; multiple identical requests may result in multiple resource changes.
+
+    Security and Use Cases:
+    - GET should be used for retrieving data or performing actions that do not change server state.
+    - POST should be used for submitting sensitive data (like passwords) or when the operation changes server state.
+    - Since GET appends data to the URL, sensitive information may be exposed in browser history or server logs.
+    - POST is preferred for sensitive data transmission but does not inherently encrypt data; HTTPS should be used for secure transmission.
+
+    Summary:
+    - Use GET to fetch data and POST to submit data.
+    - Data sent via GET is visible in the URL; data sent via POST is in the request body.
+    - Choose the method based on the nature of the operation and sensitivity of the data.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get & Post</title>
+</head>
+<body>
+    <h3>Get Request Form</h3>
+    <form method="get" action="http://localhost:8080/register">
+        <input type="text" placeholder="enter username" name="user">
+        <input type="password" placeholder="enter password" name="pass">
+        <button>Submit</button>
+    </form>
+    <hr>
+    <h3>Post Request Form</h3>
+    <form method="post" action="http://localhost:8080/register">
+        <input type="text" placeholder="enter username" name="user">
+        <input type="password" placeholder="enter password" name="pass">
+        <button>Submit</button>
+    </form>
+</body>
+</html>
