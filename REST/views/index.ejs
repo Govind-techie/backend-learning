@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Index Route of RESTful API showing all posts -->
+    <h1>Quora Posts</h1>
+    <!-- Loop through all posts (READ operation) -->
+    <% for(post of posts) { %>
+        <div class="post" data-id="<%= post.id %>">
+            <h3 class="user">@<%= post.username %></h3>
+            <h4 class="content"><%= post.content %></h4>
+            <button class="show-post">See Post</button>
+            <button class="edit-post">Edit Post</button>
+            <!-- Method override simulates DELETE, as forms only support GET and POST -->
+            <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
+                <button class="del-post">Delete Post</button>
+            </form>
+        </div>
+    <% } %>
+    <!-- Add Post button represents CREATE operation -->
+        <button class="post-btn" style="margin-top: 15px;">Add Post</button>
+
+    <script src="/script.js"></script>
+</body>
+</html>

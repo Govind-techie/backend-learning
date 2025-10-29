@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+</head>
+<body>
+    <!-- This page represents the EDIT route of a RESTful API, providing a form to update an existing post -->
+    <h2>Edit your post</h2>
+    <p>Post id: <%= post.id %></p>
+    <p>Post username: @<%= post.username %></p>
+    <!-- REST (Representational State Transfer) is an architectural style for designing networked applications -->
+    <!-- API (Application Programming Interface) allows different software to communicate -->
+    <!-- HTTP methods like GET, POST, PATCH, DELETE correspond to CRUD operations -->
+    <!-- The form uses the PATCH method (via method override) to update the post -->
+    <form method="POST" action="/posts/<%= post.id %>?_method=PATCH">
+        <!-- Textarea allows the user to modify the content of the post (UPDATE operation in CRUD) -->
+        <textarea name="content" placeholder="enter new content" rows="10" cols="35"><%= post.content %> </textarea>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

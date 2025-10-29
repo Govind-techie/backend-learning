@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Posts</title>
+</head>
+<body>
+    <!-- This page represents the NEW route in a RESTful API, providing a form to create a new post -->
+    <!-- The form uses the POST method to send data to the server to create a new resource -->
+    <form action="/posts" method="post">
+        <!-- Username and content fields correspond to user input for the new post (CREATE operation in CRUD) -->
+        <input type="text" placeholder="enter username" name="username">
+        <textarea name="content" placeholder="write your post" style="display: block; margin: 10px 0;"></textarea>
+        <button type="submit" style="display: block;">Submit</button>
+    </form>
+</body>
+</html>
