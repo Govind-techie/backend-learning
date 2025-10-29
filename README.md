@@ -44,6 +44,18 @@
 - [x] ES6 Classes (`05_classes.js`)
 - [x] Inheritance & Polymorphism (`06_inheritance.js`)
 
+### RESTful API Development
+- [x] REST Architecture Principles
+- [x] CRUD Operations
+- [x] RESTful Routes Pattern
+- [x] Resource Naming Conventions
+- [x] Client-Server Integration (`public/script.js`)
+- [x] View Templates
+  - Index View (`views/index.ejs`)
+  - Show View (`views/show.ejs`)
+  - Create View (`views/new.ejs`)
+  - Edit View (`views/edit.ejs`)
+
 ---
 
 ## 💡 Key Concepts Learned
@@ -129,6 +141,31 @@ class Admin extends User {
 }
 ```
 
+### RESTful Routes Pattern
+
+```javascript
+// Basic REST routes setup
+app.get('/resources', (req, res) => {
+    // Index - Show all resources
+});
+
+app.post('/resources', (req, res) => {
+    // Create - Add new resource
+});
+
+app.get('/resources/:id', (req, res) => {
+    // Show - Display specific resource
+});
+
+app.put('/resources/:id', (req, res) => {
+    // Update - Modify existing resource
+});
+
+app.delete('/resources/:id', (req, res) => {
+    // Delete - Remove resource
+});
+```
+
 ---
 
 ## 📝 Learning Notes
@@ -170,13 +207,22 @@ class Admin extends User {
 - 'this' keyword behavior
 - Prototypal inheritance chain
 
+**RESTful API Design**
+- Resource-based routing
+- HTTP methods semantics (GET, POST, PUT, DELETE)
+- Route naming conventions
+- Client-server architecture
+- Stateless communication
+- CRUD operations mapping
+- View templates organization
+
 ---
 
 ## 🎯 Next Learning Goals
 
 1. Database Integration
-2. RESTful API Design
-3. Authentication & Authorization
+2. Authentication & Authorization
+3. API Security
 4. Error Handling
 5. Advanced Design Patterns
 
