@@ -56,6 +56,14 @@
   - Create View (`views/new.ejs`)
   - Edit View (`views/edit.ejs`)
 
+### Middleware Concepts
+- [x] Middleware Functions
+- [x] Built-in Middleware
+- [x] Custom Middleware
+- [x] Error Handling Middleware
+- [x] Authentication Middleware
+- [x] Request-Response Cycle
+
 ---
 
 ## 💡 Key Concepts Learned
@@ -166,6 +174,30 @@ app.delete('/resources/:id', (req, res) => {
 });
 ```
 
+### Middleware Implementation
+
+```javascript
+// Basic middleware setup
+const logger = (req, res, next) => {
+    console.log(`${req.method} ${req.path}`);
+    next();
+};
+
+// Error handling middleware
+const errorHandler = (err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).render('error');
+};
+
+// Authentication middleware
+const checkAuth = (req, res, next) => {
+    if (!req.isAuthenticated) {
+        return res.render('access');
+    }
+    next();
+};
+```
+
 ---
 
 ## 📝 Learning Notes
@@ -215,6 +247,14 @@ app.delete('/resources/:id', (req, res) => {
 - Stateless communication
 - CRUD operations mapping
 - View templates organization
+
+**Middleware Understanding**
+- Request-response cycle
+- Middleware execution order
+- Error handling patterns
+- Authentication flow
+- Built-in middleware usage
+- Custom middleware creation
 
 ---
 
